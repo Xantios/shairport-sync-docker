@@ -2,8 +2,16 @@
 
 This is a fork of the project by [Kevin Eye](https://github.com/kevineye/docker-shairport-sync) which seemed abandonded.
 
+## Get up and running
 
-## Get up and running fast
+Copy/past a config-file from this repo and run
+
+```bash
+docker run -v $PWD:/config xantios/shairport 
+```
+
+## Get up and running fast, but with more options
+- Clone this repo
 - Run the included build script
 - Copy the example config, and set it to your liking (defaults should work most of the time)
 - Run the included run script

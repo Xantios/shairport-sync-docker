@@ -6,3 +6,7 @@ alsa = {
   output_device = "hw:0";
   mixer_control_name = "PCM";
 };
+
+diagnostics = {
+    log_verbosity = 0; // 0 for silence, 3 for verbose. 
+}
