@@ -1,0 +1,8 @@
+general = {
+  name = "BoxOuwe";
+};
+
+alsa = {
+  output_device = "hw:1,0";
+  mixer_control_name = "PCM";
+};

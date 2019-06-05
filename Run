@@ -1,0 +1,10 @@
+#!/bin/bash
+
+docker stop santemekraam
+docker rm santemekraam
+
+docker run\
+ -v $PWD:/conf/\
+ --net host\
+ --device /dev/snd\
+ --name santemekraam santemekraam-image -vu -c /conf/shairport.conf 

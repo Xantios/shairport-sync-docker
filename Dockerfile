@@ -1,25 +1,23 @@
 FROM alpine:edge
-MAINTAINER kevineye@gmail.com
+MAINTAINER git@xantios.nl
 
-RUN apk -U add \
-        git \
-        build-base \
-        autoconf \
-        automake \
-        libtool \
-        alsa-lib-dev \
-        libdaemon-dev \
-        popt-dev \
-        libressl-dev \
-        soxr-dev \
-        avahi-dev \
-        libconfig-dev \
+RUN apk -U add\
+ git\
+ build-base\
+ autoconf\
+ automake\
+ libtool\
+ alsa-lib-dev\
+ libdaemon-dev\
+ popt-dev\
+ libressl-dev\
+ soxr-dev\
+ avahi-dev\
+ libconfig-dev
 
- && cd /root \
- && git clone https://github.com/mikebrady/shairport-sync.git \
- && cd shairport-sync \
+ RUN cd /root && git clone "https://github.com/mikebrady/shairport-sync.git" 
 
- && autoreconf -i -f \
+ RUN cd /root/shairport-sync && autoreconf -i -f \
  && ./configure \
         --with-alsa \
         --with-pipe \
@@ -28,9 +26,9 @@ RUN apk -U add \
         --with-soxr \
         --with-metadata \
  && make \
- && make install \
+ && make install
 
- && cd / \
+RUN cd / \
  && apk --purge del \
         git \
         build-base \
@@ -59,7 +57,7 @@ RUN apk -U add \
         /lib/apk/db/* \
         /root/shairport-sync
 
-COPY start.sh /start
+COPY bootstrap.sh /start
 
 ENV AIRPLAY_NAME Docker
 

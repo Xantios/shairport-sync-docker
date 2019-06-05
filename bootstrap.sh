@@ -8,4 +8,4 @@ dbus-daemon --system
 
 avahi-daemon --daemonize --no-chroot
 
-shairport-sync -m avahi -a "$AIRPLAY_NAME" "$@"
+shairport-sync -m avahi "$@"
