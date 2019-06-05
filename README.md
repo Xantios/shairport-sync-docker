@@ -4,7 +4,7 @@ This is a fork of the project by [Kevin Eye](https://github.com/kevineye/docker-
 
 
 ## Get up and running fast
-- Run the includedi build script
+- Run the included build script
 - Copy the example config, and set it to your liking (defaults should work most of the time)
 - Run the included run script
 
